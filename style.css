@@ -70,3 +70,56 @@ body {
 .header > * {
   padding: 20px;
 }
+
+.spotify-playlists {
+  padding: 16px;
+}
+
+.card-container {
+  margin: 30px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.spotify-playlists .card {
+  position: relative;
+  width: 200px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(34, 34, 34);
+}
+
+.card > * {
+  padding-top: 10px;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.play {
+  position: absolute;
+  top: 168px;
+  right: 17px;
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.circular-box {
+  width: 50px;
+  height: 50px;
+  background-color: #1fdf64;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.circular-box svg {
+  width: 50%;
+  height: 50%;
+  fill: #000000;
+}
