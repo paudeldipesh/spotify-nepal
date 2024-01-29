@@ -55,7 +55,8 @@ body {
 
 .footer {
   display: flex;
-  font-size: 10px;
+  justify-content: space-around;
+  font-size: 11px;
   color: grey;
   gap: 13px;
   position: absolute;
@@ -65,6 +66,11 @@ body {
 
 .footer a {
   color: grey;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 .header {
@@ -106,15 +112,24 @@ body {
 
 .card img {
   width: 100%;
-  object-fit: contain;
+  height: 150px;
+  object-fit: cover;
 }
 
 .play {
   position: absolute;
-  top: 168px;
+  top: 125px;
   right: 17px;
   opacity: 0;
   transition: all 1s ease-out;
+}
+
+.spotify-playlists .card:hover .play {
+  opacity: 1;
+}
+
+.card:hover + .play {
+  opacity: 1;
 }
 
 .circular-box {
@@ -139,20 +154,19 @@ body {
 }
 
 .signup-btn {
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(250, 250, 250);
+  padding: 10px;
+  border-radius: 21px;
   color: #106b31;
   border: 0;
   cursor: pointer;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   transition: all 0.7 ease-in-out;
 }
 
 .signup-btn:hover {
-  font-weight: bold;
   transition: all 0.3s ease-in-out;
-  padding: 10px;
-  border-radius: 21px;
   background-color: white;
   transition: all 0.7 ease-in-out;
   color: black;
@@ -167,7 +181,7 @@ body {
   cursor: pointer;
   border: 0;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 14px;
   transition: background-color 0.5s ease-in-out;
 }
 
@@ -177,11 +191,17 @@ body {
 }
 
 .playbar {
-  bottom: 0;
   position: absolute;
-  background-color: #106b31;
+  bottom: 30px;
+  border-radius: 20px;
+  background-color: rgb(34, 34, 34);
   width: 90%;
   padding: 12px;
+  height: 55px;
+}
+
+.play-now:hover {
+  color: gray;
 }
 
 .songs {
@@ -196,8 +216,14 @@ body {
   gap: 12px;
 }
 
+.song-buttons img {
+  font-weight: bold;
+  filter: invert(1);
+}
+
 .song-list ul {
   font-size: 15px;
+  height: 400px;
   padding: 0 12px;
 }
 
@@ -206,7 +232,6 @@ body {
   justify-content: space-around;
   align-items: center;
   margin: 10px 0;
-  cursor: pointer;
   padding: 12px 0;
   background-color: rgb(34, 34, 34);
   border-radius: 5px;
@@ -219,4 +244,25 @@ body {
 
 .play-button img:hover {
   background-color: grey;
+}
+
+.seekbar {
+  height: 2px;
+  width: 96%;
+  background-color: #000;
+  margin: 6px;
+  position: absolute;
+  bottom: 1px;
+  border-radius: 50px;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  bottom: 6px;
+  left: 49%;
+  transition: left 0.5s;
 }

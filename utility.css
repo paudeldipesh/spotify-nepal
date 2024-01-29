@@ -27,6 +27,19 @@
   background-color: #121212;
 }
 
+.text-orange {
+  color: orange;
+}
+
+.text-sm {
+  font-size: 12px;
+}
+
+.text-green {
+  color: rgb(34, 201, 34);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2);
+}
+
 .rounded {
   border-radius: 7px;
 }
@@ -37,6 +50,14 @@
 
 .p-1 {
   padding: 10px;
+}
+
+.w-20 {
+  width: 150px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {

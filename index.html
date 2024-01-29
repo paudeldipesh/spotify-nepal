@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="utility.css" />
     <title>Spotify - Web Player: Music for everyone</title>
@@ -25,19 +26,7 @@
             <h2>Your Library</h2>
           </div>
           <div class="song-list">
-            <ul class="songs">
-              <li class="song-card rounded">
-                <img class="invert" src="music.svg" alt="music" />
-                <div class="info">
-                  <div>Song Name</div>
-                  <div>Song Artist</div>
-                </div>
-                <span>Play Now</span>
-                <div class="play-button">
-                  <img class="invert" src="play.svg" alt="play" />
-                </div>
-              </li>
-            </ul>
+            <ul class="songs"></ul>
           </div>
           <div class="footer">
             <div>
@@ -61,11 +50,6 @@
             <div>
               <a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"
                 ><span>About Ads</span></a
-              >
-            </div>
-            <div>
-              <a href="https://www.spotify.com/jp/accessibility/"
-                ><span>Accessibility</span></a
               >
             </div>
           </div>
@@ -134,12 +118,15 @@
                 src="https://i.scdn.co/image/ab67706f00000002d771dc645afe9b87978b1d3e"
                 alt="music"
               />
-              <h3>Happy Hits</h3>
+              <h3 class="text-orange">Happy Hits</h3>
               <p>Hits to boost your mood and fill you with happiness!</p>
             </div>
           </div>
         </div>
         <div class="playbar">
+          <div class="seekbar">
+            <div class="circle"></div>
+          </div>
           <div class="song-info"></div>
           <div class="song-buttons">
             <img src="previous.svg" alt="previous" />
