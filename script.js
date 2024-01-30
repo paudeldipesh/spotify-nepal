@@ -1,7 +1,21 @@
-const playBtnEl = document.querySelector(".play");
-playBtnEl.addEventListener("click", () => {
-  console.log("Music played");
-});
+const playCardBtnEl = document.querySelector(".play");
+const previousBtnEl = document.getElementById("previous");
+const playBtnEl = document.getElementById("play");
+const nextBtnEl = document.getElementById("next");
+
+function secondsToMinutesAndSecondsFormat(seconds) {
+  if (isNaN(seconds) || seconds < 0) {
+    return "00:00";
+  }
+
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = Math.floor(seconds % 60);
+
+  const formattedMinutes = String(minutes).padStart(2, "0");
+  const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+
+  return `${formattedMinutes}:${formattedSeconds}`;
+}
 
 async function getSongs() {
   const response = await fetch("http://127.0.0.1:3000/songs/");
@@ -25,13 +39,19 @@ async function getSongs() {
 
 let currentSong = new Audio();
 
-const playMusic = (music) => {
+const playMusic = (music, pause = false) => {
   currentSong.src = `/songs/${music}`;
-  currentSong.play();
+  if (!pause) {
+    currentSong.play();
+    playBtnEl.src = "pause.svg";
+  }
+  document.querySelector(".song-info").innerHTML = decodeURIComponent(music);
+  document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
 };
 
 (async function main() {
   let songs = await getSongs();
+  playMusic(songs[0], true);
 
   let songsUl = document
     .querySelector(".song-list")
@@ -42,7 +62,7 @@ const playMusic = (music) => {
     <img class="invert" src="music.svg" alt="music" />
     <div class="info">
       <div class="text-orange w-20">
-        ${song.replaceAll("%20", " ")}
+        ${decodeURIComponent(song)}
       </div>
     </div>
     <span class="play-now">Play Now</span>
@@ -62,5 +82,32 @@ const playMusic = (music) => {
           .firstElementChild.innerHTML.trim()
       );
     });
+  });
+
+  playBtnEl.addEventListener("click", () => {
+    if (currentSong.paused) {
+      currentSong.play();
+      playBtnEl.src = "pause.svg";
+    } else {
+      currentSong.pause();
+      playBtnEl.src = "play.svg";
+    }
+  });
+
+  currentSong.addEventListener("timeupdate", () => {
+    document.querySelector(
+      ".song-time"
+    ).innerHTML = `${secondsToMinutesAndSecondsFormat(
+      currentSong.currentTime
+    )} / ${secondsToMinutesAndSecondsFormat(currentSong.duration)}`;
+    document.querySelector(".circle").style.left = `${
+      (currentSong.currentTime / currentSong.duration) * 100
+    }%`;
+  });
+
+  document.querySelector(".seekbar").addEventListener("click", (e) => {
+    document.querySelector(".circle").style.left = `${
+      (e.offsetX / e.target.getBoundingClientRect().width) * 100
+    }%`;
   });
 })();

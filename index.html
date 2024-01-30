@@ -124,16 +124,23 @@
           </div>
         </div>
         <div class="playbar">
-          <div class="seekbar">
+          <div class="seekbar cursor-pointer">
             <div class="circle"></div>
           </div>
-          <div class="song-info"></div>
-          <div class="song-buttons">
-            <img src="previous.svg" alt="previous" />
-            <img src="play.svg" alt="play" />
-            <img src="next.svg" alt="next" />
+          <div class="above-bar">
+            <div class="song-info"></div>
+            <div class="song-buttons">
+              <img
+                id="previous"
+                class="cursor-pointer"
+                src="previous.svg"
+                alt="previous"
+              />
+              <img id="play" class="cursor-pointer" src="play.svg" alt="play" />
+              <img id="next" class="cursor-pointer" src="next.svg" alt="next" />
+            </div>
+            <div class="song-time"></div>
           </div>
-          <div class="song-time"></div>
         </div>
       </div>
     </div>
