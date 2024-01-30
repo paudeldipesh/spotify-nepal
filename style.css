@@ -48,6 +48,11 @@ body {
   width: 25px;
 }
 
+.logo {
+  display: flex;
+  justify-content: space-between;
+}
+
 .library {
   min-height: 80vh;
   position: relative;
@@ -88,6 +93,10 @@ body {
 .nav svg {
   background-color: #000;
   border-radius: 50%;
+}
+
+.hamburger {
+  display: none;
 }
 
 .spotify-playlists {
@@ -162,7 +171,7 @@ body {
   background-color: rgb(250, 250, 250);
   padding: 10px;
   border-radius: 21px;
-  color: #106b31;
+  color: #1fdf64;
   border: 0;
   cursor: pointer;
   font-weight: 700;
@@ -191,7 +200,7 @@ body {
 }
 
 .login-btn:hover {
-  background-color: #106b31;
+  background-color: #1fdf64;
   color: #fff;
 }
 
@@ -265,7 +274,7 @@ body {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: orange;
+  background-color: #1fdf64;
   border: 2px solid #030712;
   position: relative;
   bottom: 6px;
@@ -283,4 +292,92 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  color: #fff;
+  text-shadow: 1px 1px 0px #1fdf64;
+}
+
+@media (max-width: 1280px) {
+  .song-card img {
+    display: none;
+  }
+
+  .play-button {
+    display: none;
+  }
+
+  .play-now {
+    display: none;
+  }
+}
+
+@media (max-width: 890px) {
+  .song-info {
+    display: none;
+  }
+
+  .left {
+    position: absolute;
+    left: -100%;
+    transition: all 0.7s ease-in-out;
+    z-index: 100;
+    width: 100%;
+  }
+
+  .close {
+    display: none;
+  }
+
+  .right {
+    width: 100vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .playbar {
+    width: 92vw;
+    z-index: 100;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .song-card img {
+    display: block;
+  }
+
+  .play-now {
+    display: block;
+  }
+
+  .arrow-pointing {
+    display: none;
+  }
+
+  .seekbar {
+    width: 94%;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .song-list ul {
+    height: 276px;
+  }
+
+  .library {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .seekbar {
+    width: 88%;
+  }
+
+  .playbar {
+    position: fixed;
+    bottom: 105px;
+  }
 }

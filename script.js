@@ -106,8 +106,12 @@ const playMusic = (music, pause = false) => {
   });
 
   document.querySelector(".seekbar").addEventListener("click", (e) => {
-    document.querySelector(".circle").style.left = `${
-      (e.offsetX / e.target.getBoundingClientRect().width) * 100
-    }%`;
+    let barPercent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+    document.querySelector(".circle").style.left = `${barPercent}%`;
+    currentSong.currentTime = (currentSong.duration * barPercent) / 100;
+  });
+
+  document.querySelector(".hamburger").addEventListener("click", () => {
+    document.querySelector(".left").style.left = "0";
   });
 })();
