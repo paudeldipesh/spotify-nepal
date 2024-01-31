@@ -3,6 +3,8 @@ const previousBtnEl = document.getElementById("previous");
 const playBtnEl = document.getElementById("play");
 const nextBtnEl = document.getElementById("next");
 
+let songs;
+
 function secondsToMinutesAndSecondsFormat(seconds) {
   if (isNaN(seconds) || seconds < 0) {
     return "00:00";
@@ -50,7 +52,7 @@ const playMusic = (music, pause = false) => {
 };
 
 (async function main() {
-  let songs = await getSongs();
+  songs = await getSongs();
   playMusic(songs[0], true);
 
   let songsUl = document
@@ -117,5 +119,19 @@ const playMusic = (music, pause = false) => {
 
   document.querySelector(".close").addEventListener("click", () => {
     document.querySelector(".left").style.left = "-100%";
+  });
+
+  previousBtnEl.addEventListener("click", () => {
+    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if (index - 1 >= 0) {
+      playMusic(songs[index - 1]);
+    }
+  });
+
+  nextBtnEl.addEventListener("click", () => {
+    let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+    if (index + 1 < songs.length) {
+      playMusic(songs[index + 1]);
+    }
   });
 })();
