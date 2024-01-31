@@ -105,6 +105,7 @@ body {
 .card-container {
   margin: 30px;
   display: flex;
+  justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
   overflow-y: scroll;
@@ -295,6 +296,26 @@ body {
   text-shadow: 1px 1px 0px #1fdf64;
 }
 
+.volume {
+  position: fixed;
+  bottom: 100px;
+  z-index: 100;
+  right: 40px;
+  background-color: orange;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid #1fdf64;
+}
+
+.range {
+  position: absolute;
+  top: -30px;
+}
+
 @media (max-width: 1280px) {
   .song-card img {
     display: none;
@@ -393,6 +414,10 @@ body {
 @media (max-width: 480px) {
   .seekbar {
     width: 88%;
+  }
+
+  .volume {
+    bottom: 80px;
   }
 
   .playbar {
