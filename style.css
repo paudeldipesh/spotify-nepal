@@ -48,9 +48,8 @@ body {
   width: 25px;
 }
 
-.logo {
-  display: flex;
-  justify-content: space-between;
+.close {
+  display: none;
 }
 
 .library {
@@ -323,8 +322,12 @@ body {
     width: 100%;
   }
 
-  .close {
-    display: none;
+  .song-card img {
+    display: block;
+  }
+
+  .play-now {
+    display: block;
   }
 
   .right {
@@ -336,6 +339,15 @@ body {
   .playbar {
     width: 92vw;
     z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .close {
+    display: block;
   }
 
   .hamburger {
@@ -378,6 +390,6 @@ body {
 
   .playbar {
     position: fixed;
-    bottom: 105px;
+    bottom: 60px;
   }
 }
