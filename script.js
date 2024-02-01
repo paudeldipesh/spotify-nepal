@@ -134,4 +134,10 @@ const playMusic = (music, pause = false) => {
       playMusic(songs[index + 1]);
     }
   });
+
+  document
+    .querySelector(".range")
+    .firstElementChild.addEventListener("change", (e) => {
+      currentSong.volume = Number.parseInt(e.target.value) / 100;
+    });
 })();
