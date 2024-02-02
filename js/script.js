@@ -46,7 +46,7 @@ const playMusic = (music, pause = false) => {
   currentSong.src = `/songs/${music}`;
   if (!pause) {
     currentSong.play();
-    playBtnEl.src = "pause.svg";
+    playBtnEl.src = "./images/pause.svg";
   }
   document.querySelector(".song-info").innerHTML = decodeURIComponent(music);
   document.querySelector(".song-time").innerHTML = "00:00 / 00:00";
@@ -62,7 +62,7 @@ const playMusic = (music, pause = false) => {
 
   for (const song of songs) {
     songsUl.innerHTML += `<li class="song-card rounded cursor-pointer">
-    <img class="invert" src="music.svg" alt="music" />
+    <img class="invert" src="./images/music.svg" alt="music" />
     <div class="info">
       <div class="text-orange w-20">
         ${decodeURIComponent(song)}
@@ -70,7 +70,7 @@ const playMusic = (music, pause = false) => {
     </div>
     <span class="play-now">Play Now</span>
     <div class="play-button cursor-pointer">
-      <img class="invert cursor-pointer" src="play.svg" alt="play" />
+      <img class="invert cursor-pointer" src="./images/play.svg" alt="play" />
     </div>
   </li>`;
   }
@@ -119,10 +119,10 @@ const playMusic = (music, pause = false) => {
   playBtnEl.addEventListener("click", () => {
     if (currentSong.paused) {
       currentSong.play();
-      playBtnEl.src = "pause.svg";
+      playBtnEl.src = "./images/pause.svg";
     } else {
       currentSong.pause();
-      playBtnEl.src = "play.svg";
+      playBtnEl.src = "./images/play.svg";
     }
   });
 

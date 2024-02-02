@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="utility.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/utility.css" />
     <title>Spotify - Web Player: Music for everyone</title>
   </head>
   <body>
@@ -13,17 +13,21 @@
       <div class="left">
         <div class="home bg-grey rounded m-1 p-1">
           <div class="logo">
-            <img width="120" src="logo.svg" alt="logo" />
-            <img class="close" src="close.svg" alt="close" />
+            <img width="120" src="./images/logo.svg" alt="logo" />
+            <img class="close" src="./images/close.svg" alt="close" />
           </div>
           <ul>
             <li>
-              <img class="invert nav-item" src="home.svg" alt="home" />Home
+              <img
+                class="invert nav-item"
+                src="./images/home.svg"
+                alt="home"
+              />Home
             </li>
             <li>
               <img
                 class="invert nav-item"
-                src="search.svg"
+                src="./images/search.svg"
                 alt="search"
               />Search
             </li>
@@ -31,7 +35,7 @@
         </div>
         <div class="library bg-grey rounded m-1 p-1">
           <div class="heading">
-            <img class="invert" src="playlist.svg" alt="playlist" />
+            <img class="invert" src="./images/playlist.svg" alt="playlist" />
             <h2>Your Library</h2>
           </div>
           <div class="song-list">
@@ -67,7 +71,11 @@
       <div class="right bg-grey rounded p-1">
         <div class="header rounded">
           <div class="nav">
-            <img class="invert hamburger" src="hamburger.svg" alt="hamburger" />
+            <img
+              class="invert hamburger"
+              src="./images/hamburger.svg"
+              alt="hamburger"
+            />
             <svg
               class="arrow-pointing"
               xmlns="http://www.w3.org/2000/svg"
@@ -118,23 +126,33 @@
               <img
                 id="previous"
                 class="cursor-pointer"
-                src="previous.svg"
+                src="./images/previous.svg"
                 alt="previous"
               />
-              <img id="play" class="cursor-pointer" src="play.svg" alt="play" />
-              <img id="next" class="cursor-pointer" src="next.svg" alt="next" />
+              <img
+                id="play"
+                class="cursor-pointer"
+                src="./images/play.svg"
+                alt="play"
+              />
+              <img
+                id="next"
+                class="cursor-pointer"
+                src="./images/next.svg"
+                alt="next"
+              />
             </div>
             <div class="song-time"></div>
           </div>
         </div>
       </div>
       <div class="volume">
-        <img class="invert" src="volume.svg" alt="volume" />
+        <img class="invert" src="./images/volume.svg" alt="volume" />
         <div class="range">
           <input type="range" id="volume" />
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>
