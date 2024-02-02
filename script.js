@@ -2,6 +2,7 @@ const playCardBtnEl = document.querySelector(".play");
 const previousBtnEl = document.getElementById("previous");
 const playBtnEl = document.getElementById("play");
 const nextBtnEl = document.getElementById("next");
+const cardContainerEl = document.querySelector(".card-container");
 
 let songs;
 
@@ -72,6 +73,35 @@ const playMusic = (music, pause = false) => {
       <img class="invert cursor-pointer" src="play.svg" alt="play" />
     </div>
   </li>`;
+  }
+
+  for (const song of songs) {
+    cardContainerEl.innerHTML += `<div class="card rounded">
+    <div class="play">
+      <div class="circular-box">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M5 20V4L19 12L5 20Z"
+            stroke="none"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+    <img
+      src="https://i.scdn.co/image/ab67706f00000002d771dc645afe9b87978b1d3e"
+      alt="music"
+    />
+    <h3 class="text-orange">Happy Hits</h3>
+    <p>${decodeURIComponent(song)}</p>
+  </div>`;
   }
 
   Array.from(
